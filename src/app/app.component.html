@@ -1,22 +1,35 @@
-<!-- Header -->
-<mat-toolbar color="primary">
-  <span>Spiget Explorer</span>
-</mat-toolbar>
+<div class="container">
+  <!-- Header -->
+  <mat-toolbar color="primary">
+    <span>Spiget Explorer</span>
+  </mat-toolbar>
 
-<mat-drawer-container class="sidenav-container">
-  <mat-drawer class="sidenav" mode="side" opened>
-    <!-- Navigation -->
-    <button mat-raised-button>Test</button>
-  </mat-drawer>
+  <mat-drawer-container class="sidenav-container">
+    <mat-drawer class="sidenav" mode="side" opened>
+      <!-- Navigation -->
 
-  <mat-drawer-content class="sidenav-content">
-    
-    <!-- Component Header -->
-    <mat-toolbar>{{ componentName }}</mat-toolbar>
+      <!-- Home -->
+      <button mat-button (click)="go('')" [disabled]="compId === 'home'">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
 
-    <!-- Router outlet-->
-    <div class="component-container">
-      <router-outlet (activate)="onActivate()" #router></router-outlet>
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+      <!-- About -->
+      <button mat-button (click)="go('about')" [disabled]="compId === 'about'">
+        <mat-icon>info</mat-icon>
+        <span>About</span>
+      </button>
+    </mat-drawer>
+
+    <mat-drawer-content class="sidenav-content">
+      
+      <!-- Component Header -->
+      <mat-toolbar>{{ compName }}</mat-toolbar>
+
+      <!-- Router outlet-->
+      <div class="component-container">
+        <router-outlet (activate)="onActivate()" #router></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

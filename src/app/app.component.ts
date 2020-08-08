@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'spiget-root',
@@ -8,12 +8,24 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'spiget-explorer';
-  componentName = "";
+  compId = "";
+  compName = "";
 
   @ViewChild(RouterOutlet, { static: true })
-  private router: RouterOutlet;
+  private outlet: RouterOutlet;
+
+  constructor(
+    private router: Router
+  ) {}
 
   onActivate() {
-    this.router.activatedRoute.data.subscribe(data => this.componentName = data.name);
+    this.outlet.activatedRoute.data.subscribe(data => {
+      this.compId = data.id;
+      this.compName = data.name;
+    });
+  }
+
+  go(name: string) {
+    this.router.navigate([ name ]);
   }
 }

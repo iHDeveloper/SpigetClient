@@ -1,25 +1,44 @@
-.icon-menu {
-    margin-right: 1em;
-}
 
-.sidenav-container {
-    position: relative;
-    box-sizing: border-box;
-    z-index: 1;
+.container {
     height: 100%;
 
-    .sidenav {
-        padding: 20px;
+    .icon-menu {
+        margin-right: 1em;
     }
 
-    .sidenav-content {
-        display: block;
+    .sidenav-container {
         position: relative;
-        z-index: 1;
-        overflow: auto;
-
-        .component-container {
-            padding: 3em;
+        height: 100%;
+    
+        .sidenav {
+            min-width: 100px;
+    
+            button {
+                width: 100%;
+                min-height: 50px;
+                transition: .5s;
+    
+                &:disabled {
+                    background: darkgray;
+                    color: white;
+                    border-radius: 0;
+                }
+    
+                mat-icon {
+                    margin-right: 5px;
+                }
+            }
         }
-    }
+    
+        .sidenav-content {
+            display: block;
+            position: relative;
+            z-index: 1;
+            overflow: auto;
+    
+            .component-container {
+                padding: 3em;
+            }
+        }
+    }    
 }
