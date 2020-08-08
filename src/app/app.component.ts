@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'spiget-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spiget-explorer';
+  componentName = "";
+
+  @ViewChild(RouterOutlet, { static: true })
+  private router: RouterOutlet;
+
+  onActivate() {
+    this.router.activatedRoute.data.subscribe(data => this.componentName = data.name);
+  }
 }
