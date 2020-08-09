@@ -1,0 +1,28 @@
+<div class="container" [ngClass]="{'container-active': !loading && !error}">
+
+    <!-- Loading -->
+    <ng-template [ngIf]="loading">
+        <mat-spinner [diameter]="32"></mat-spinner>
+        <h2 mat-h2>Loading...</h2>
+    </ng-template>
+
+    <!-- Failed to load -->
+    <ng-template [ngIf]="!loading && error">
+        <mat-icon>error</mat-icon>
+        <h2 mat-h2>Failed to load the resource!</h2>
+    </ng-template>
+
+    <!-- Loadoed -->
+    <ng-template [ngIf]="!loading && !error">
+        <div class="info">
+            <h1>The Hunters</h1>
+            <h4>v0.1-BETA</h4>
+        </div>
+        <p mat-body>A Minecraft mini game has a target and 6 hunters. Prove that you can't be hunted!</p>
+        <div class="author">
+            <img src="https://www.spigotmc.org/data/avatars/s/342/342233.jpg?1527865500" alt="Author Icon">
+            <h4 mat-h4>iHDeveloper</h4>
+        </div>
+    </ng-template>
+
+</div>

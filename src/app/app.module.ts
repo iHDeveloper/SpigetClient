@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AuthorCardComponent } from './author-card/author-card.component';
+import { ResourceCardComponent } from './resource-card/resource-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    AuthorCardComponent
+    AuthorCardComponent,
+    ResourceCardComponent
   ],
   imports: [
     BrowserModule,
