@@ -1,4 +1,4 @@
-<div class="container" [ngClass]="{'container-active': !loading && !error}">
+<div matRipple class="container" [ngClass]="{'container-active': !loading && !error}">
 
     <!-- Loading -->
     <ng-template [ngIf]="loading">
@@ -12,9 +12,10 @@
         <h2 mat-h2>Failed to load the resource!</h2>
     </ng-template>
 
-    <!-- Loadoed -->
+    <!-- Loaded -->
     <ng-template [ngIf]="!loading && !error">
         <div class="info">
+            <img src="https://www.spigotmc.org/data/resource_icons/5/5583.jpg?1541956806" alt="Resource Icon">
             <h1>The Hunters</h1>
             <h4>v0.1-BETA</h4>
         </div>

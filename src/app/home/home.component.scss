@@ -1,4 +1,12 @@
+.resources {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .container {
+    margin-left: .75em;
+    margin-right: .75em;
     margin-bottom: 1.5em;
 
     .list {
