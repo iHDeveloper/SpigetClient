@@ -1,11 +1,7 @@
 {
   "name": "spiget-explorer",
   "version": "0.0.0",
-  "author": {
-    "name": "iHDeveloper",
-    "email": "20463031+iHDeveloper@users.noreply.github.com",
-    "url": "https://ihdeveloper.me"
-  },
+  "author": "iHDeveloper <20463031+iHDeveloper@users.noreply.github.com> (https://ihdeveloper.me)",
   "repository": {
     "url": "https://github.com/iHDeveloper/SpigetClient"
   },

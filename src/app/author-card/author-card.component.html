@@ -1,0 +1,21 @@
+<div class="container" [ngClass]="{'container-active': !loading && !error}">
+
+    <!-- Loading -->
+    <ng-template [ngIf]="loading">
+        <mat-spinner diameter="32"></mat-spinner>
+        <h2 class="loading" mat-h2>Loading...</h2>
+    </ng-template>
+
+    <!-- Failed to load -->
+    <ng-template [ngIf]="!loading && error">
+        <mat-icon>error</mat-icon>
+        <h2 class="error" mat-h2>Failed to load the author</h2>
+    </ng-template>
+
+    <!-- Loaded-->
+    <ng-template [ngIf]="!loading && !error">
+        <img class="icon" src="{{ iconUrl }}" alt="Author Icon">
+        <h2>{{ name }}</h2>
+        <div></div>
+    </ng-template>
+</div>

@@ -1,0 +1,17 @@
+.newest-authors-list {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        spiget-author-card {
+            width: 100%;
+            margin: 0 1.25em 0 1.25em;
+        }
+    }
+
+}
