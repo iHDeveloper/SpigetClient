@@ -1,4 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import Author from 'spiget/dist/types/Author';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
+const SPIGOTMC_ENDPOINT = "https://www.spigotmc.org/";
 
 @Component({
   selector: 'spiget-author-card',
@@ -7,24 +11,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AuthorCardComponent implements OnInit {
   @Input()
-  id: string;
+  author: Author;
 
   name: string;
-  iconUrl: string;
+  iconUrl: SafeUrl;
 
-  loading = true;
-  error = false;
-
-  constructor() { }
+  constructor(
+    private domSanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
+    this.name = this.author.name;
+    if (this.author.icon.url === "") {
+      return;
+    }
+    this.iconUrl = this.domSanitizer.bypassSecurityTrustUrl(`${SPIGOTMC_ENDPOINT}${this.author.icon.url}`);
   }
-
-  onError() {
-    this.error = true;
-  }
-
-  onSuccess() {
-  }
-
 }

@@ -1,0 +1,18 @@
+<div class="container" *ngIf="loading || error">
+
+    <!-- Loading -->
+    <ng-template [ngIf]="loading">
+        <mat-spinner [diameter]="32"></mat-spinner>
+        <h2 mat-h2>Loading...</h2>
+    </ng-template>
+
+    <!-- Error -->
+    <ng-template [ngIf]="error">
+        <mat-icon>error</mat-icon>
+        <h2 mat-h2>Failed to load the resource!</h2>
+    </ng-template>
+</div>
+
+<div class="list" *ngIf="!loading && !error">
+    <spiget-author-card class="item" *ngFor="let author of authors" [author]="author"></spiget-author-card>
+</div>

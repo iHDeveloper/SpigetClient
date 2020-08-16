@@ -5,22 +5,13 @@
     padding: .75em 1em .5em .75em;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
+    transition: .5s;
     
-
-    &.container-active {
-        justify-content: space-between;
-        transition: .5s;
-
-        &:hover {
-            cursor: pointer;
-            background-color: lightgray;
-            border-radius: 10px;
-        }
-    }
-
-    h2.loading, h2.error {
-        margin-bottom: 0;
-        margin-left: 1em;
+    &:hover {
+        cursor: pointer;
+        background-color: lightgray;
+        border-radius: 10px;
     }
 
     img.icon {

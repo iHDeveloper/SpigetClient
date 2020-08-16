@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        margin-left: 1em;
+        margin-bottom: 0;
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: auto auto;
+    flex-direction: column;
+
+    .item {
+        * {
+            width: 100%;
+            margin: 0 1.25em 0 1.25em;
+        }
+    }
+
+}

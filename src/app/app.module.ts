@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AuthorCardComponent } from './author-card/author-card.component';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
+import { AuthorCardListComponent } from './author-card-list/author-card-list.component';
+import { ResourceCardListComponent } from './resource-card-list/resource-card-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ResourceCardComponent } from './resource-card/resource-card.component';
     HomeComponent,
     AboutComponent,
     AuthorCardComponent,
-    ResourceCardComponent
+    ResourceCardComponent,
+    AuthorCardListComponent,
+    ResourceCardListComponent
   ],
   imports: [
     BrowserModule,
