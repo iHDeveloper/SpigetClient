@@ -13,17 +13,12 @@
 .list {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     .item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-
-        * {
-            width: 100%;
-            margin: 0 1.25em 0 1.25em;
-        }
+        width: 100%;
+        margin: 0 1.25em 0 1.25em;
     }
 
 }

@@ -11,7 +11,5 @@
 </div>
 
 <div class="list" *ngIf="!loading && !error">
-    <div class="item">
-        <spiget-resource-card></spiget-resource-card>
-    </div>
+    <spiget-resource-card class="item" *ngFor="let card of cards" [resource]="card.resource" [version]="card.version" [author]="card.author"></spiget-resource-card>
 </div>

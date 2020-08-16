@@ -1,29 +1,18 @@
-<div matRipple class="container" [ngClass]="{'container-active': !loading && !error}">
-
-    <!-- Loading -->
-    <ng-template [ngIf]="loading">
-        <mat-spinner [diameter]="32"></mat-spinner>
-        <h2 mat-h2>Loading...</h2>
-    </ng-template>
-
-    <!-- Failed to load -->
-    <ng-template [ngIf]="!loading && error">
-        <mat-icon>error</mat-icon>
-        <h2 mat-h2>Failed to load the resource!</h2>
-    </ng-template>
-
-    <!-- Loaded -->
-    <ng-template [ngIf]="!loading && !error">
-        <div class="info">
-            <img src="https://www.spigotmc.org/data/resource_icons/5/5583.jpg?1541956806" alt="Resource Icon">
-            <h1>The Hunters</h1>
-            <h4>v0.1-BETA</h4>
+<div matRipple class="container">
+    <div class="info">
+        <img [src]="icon" alt="Resource Icon">
+        <h1>{{ name }}</h1>
+        <h4>{{ versionName }}</h4>
+    </div>
+    <p mat-body>{{ tag }}</p>
+    <div class="footer">
+        <div class="type">
+            <h4 class="premium" *ngIf="premium">Premium</h4>
+            <h4 class="free" *ngIf="!premium">Free</h4>
         </div>
-        <p mat-body>A Minecraft mini game has a target and 6 hunters. Prove that you can't be hunted!</p>
         <div class="author">
-            <img src="https://www.spigotmc.org/data/avatars/s/342/342233.jpg?1527865500" alt="Author Icon">
-            <h4 mat-h4>iHDeveloper</h4>
+            <img [src]="authorIcon" alt="Author Icon">
+            <h4 mat-h4>{{ authorName }}</h4>
         </div>
-    </ng-template>
-
+    </div>
 </div>
